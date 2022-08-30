@@ -1,21 +1,24 @@
-const body = document.querySelector("body")
-body.classList.add("container")
-fetch("https://kenzie-news-api.herokuapp.com/api/news")
-.then(res => {
-    return res.json()
-})
-.then(dataKnews => {
-console.log(dataKnews)
-//localStorage.getItem(dataKnews.titulo)
-//localStorage.getItem(dataKnews.imagem)
+import { Api } from "./Api.js";
 
-const title = document.createElement("h1")
-const image = document.createElement("img")
+/* function renderPage(){
+    const body = document.querySelector("body");
+    const main = document.querySelector("main");
+    const list = document.createElement("ul");
+    const header = document.querySelector("header");
+    const footer = document.querySelector("footer");
+    const head = document.createElement("div");
+    
+    list.classList.add();
+    body.classList.add("container");
+    
+    body.appendChild(header);
+    body.appendChild(main);
+    body.appendChild(footer);
+    main.appendChild(head);
+    main.appendChild(list);
 
-title.innerText = `${dataKnews.titulo}`
-image.src = dataKnews.imagem
-
-body.appendChild(title)
-body.appendChild(image)
+    Api.buscaNoticia()
 }
-)
+
+renderPage() */
+Api.buscaNoticia()
